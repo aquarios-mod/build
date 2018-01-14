@@ -170,7 +170,7 @@ include $(BUILD_SYSTEM)/device.mk
 
 # An AquariOS build needs only the AquariOS product makefiles.
 ifneq ($(CUSTOM_BUILD),)
-  all_product_configs := $(shell find device -path "*/$(CUSTOM_BUILD)/aquarios.mk")
+  all_product_configs := $(shell ls vendor/aquarios/products/$(CUSTOM_BUILD).mk)
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
