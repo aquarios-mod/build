@@ -26,7 +26,6 @@ PRODUCT_PACKAGES := \
 	EmulatorSmokeTests \
 	Gallery2 \
 	GestureBuilder \
-	Camera2 \
 	librs_jni \
 	LiveWallpapersPicker \
 	Mms \
