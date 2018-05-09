@@ -169,8 +169,8 @@ include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
 # A Slim build needs only the Slim product makefiles.
-ifneq ($(SLIM_BUILD),)
-  all_product_configs := $(shell find device -path "*/$(SLIM_BUILD)/slim.mk")
+ifneq ($(AQUARIOS_BUILD),)
+  all_product_configs := $(shell find device -path "*/$(AQUARIOS_BUILD)/aquarios.mk")
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
@@ -181,9 +181,9 @@ else
   # files in the tree.
   all_product_configs := $(get-all-product-makefiles)
   endif # TARGET_BUILD_APPS
-endif # SLIM_BUILD
+endif # AQUARIOS_BUILD
 
-ifeq ($(SLIM_BUILD),)
+ifeq ($(AQUARIOS_BUILD),)
 all_named_products :=
 
 # Find the product config makefile for the current product.
