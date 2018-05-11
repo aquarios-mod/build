@@ -140,6 +140,7 @@ $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_SOURCE_INTERMEDIATES_DIR := $(LOCAL_INTER
 $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_ANDROID_MANIFEST := $(full_android_manifest)
 $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_RESOURCE_PUBLICS_OUTPUT := $(intermediates.COMMON)/public_resources.xml
 $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_RESOURCE_DIR := $(LOCAL_RESOURCE_DIR)
+$(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_AAPT_INCLUDES := $(framework_res_package_export)
 
 $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_ASSET_DIR :=
 $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_PROGUARD_OPTIONS_FILE := $(proguard_options_file)
@@ -167,9 +168,9 @@ my_generated_res_dirs_deps := $(RenderScript_file_stamp)
 endif  # renderscript_target_api < 21
 endif  # renderscript_target_api is set
 include $(BUILD_SYSTEM)/aapt2.mk
-$(my_res_package) : $(framework_res_package_export_deps) $(aquarios_framework_res_package_export_deps)
+$(my_res_package) : $(framework_res_package_export_deps)
 else
-$(R_file_stamp) : $(all_resources) $(full_android_manifest) $(AAPT) $(framework_res_package_export_deps) $(aquarios_framework_res_package_export_deps)
+$(R_file_stamp) : $(all_resources) $(full_android_manifest) $(AAPT) $(framework_res_package_export_deps)
 	@echo "target R.java/Manifest.java: $(PRIVATE_MODULE) ($@)"
 	$(create-resource-java-files)
 	$(hide) find $(PRIVATE_SOURCE_INTERMEDIATES_DIR) -name R.java | xargs cat > $@
