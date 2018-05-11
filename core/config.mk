@@ -189,7 +189,7 @@ $(call project-set-path-variant,recovery,RECOVERY_VARIANT,bootable/recovery)
 $(call project-set-path-variant,ril,TARGET_RIL_VARIANT,hardware/ril)
 
 -include vendor/extra/BoardConfigExtra.mk
--include vendor/aquarios/config/BoardConfigSlim.mk
+-include vendor/aquarios/config/BoardConfigAquarios.mk
 
 # The build system exposes several variables for where to find the kernel
 # headers:

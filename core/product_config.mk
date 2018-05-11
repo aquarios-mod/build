@@ -168,7 +168,7 @@ include $(BUILD_SYSTEM)/node_fns.mk
 include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
-# A Slim build needs only the Slim product makefiles.
+# A Aquarios build needs only the Aquarios product makefiles.
 ifneq ($(AQUARIOS_BUILD),)
   all_product_configs := $(shell find device -path "*/$(AQUARIOS_BUILD)/aquarios.mk")
 else

@@ -625,7 +625,7 @@ function lunch()
     check_product $product
     if [ $? -ne 0 ]
     then
-        # if we can't find a product, try to grab it off the Slimroms GitHub
+        # if we can't find a product, try to grab it off the Aquarios GitHub
         T=$(gettop)
         cd $T > /dev/null
         vendor/aquarios/build/tools/roomservice.py $product
