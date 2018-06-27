@@ -33,8 +33,9 @@ PRODUCT_PACKAGES += \
 
 # Additional settings used in all AOSP builds
 PRODUCT_PROPERTY_OVERRIDES := \
-    ro.config.ringtone=Zen.ogg \
-    ro.config.notification_sound=Chime.ogg
+    ro.config.ringtone=Lollipop.ogg \
+    ro.config.notification_sound=Knock.ogg \
+    ro.config.alarm_alert=Monkey_around.ogg
 
 # Put en_US first in the list, so make it default.
 PRODUCT_LOCALES := en_US
