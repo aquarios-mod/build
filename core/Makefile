@@ -1441,7 +1441,7 @@ systemimage-changelog: $(INTERNAL_SYSTEMIMAGE_FILES)
 	@echo -e ${00ffd7}" "${CL_RST}
 	@echo -e ${00d7ff}"     🐙 🐟 🐠 🐬 🐡 🐙 🐳 ~ GENERATING CHANGELOG ~ 🐳 🐙 🐡 🐬 🐠 🐟 🐙"${CL_RST}
 	@echo -e ${00ffd7}" "${CL_RST}
-	$(hide) APKCERTS=$(APKCERTS_FILE) ./vendor/aquarios/tools/changelog
+	$(hide) APKCERTS=$(APKCERTS_FILE) ./vendor/aquarios/tools/changelog.sh
 
 .PHONY: systemimage-changelog
 FULL_SYSTEMIMAGE_DEPS := $(INTERNAL_SYSTEMIMAGE_FILES) $(INTERNAL_USERIMAGES_DEPS) systemimage-changelog
