@@ -856,10 +856,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print(".,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.")
   script.Print("_____________________________________________")
 
-  script.Mount("/system")
-  script.RunCleanCache()
-  script.Unmount("/system")
-
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
