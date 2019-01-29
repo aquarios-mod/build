@@ -26,6 +26,7 @@ Invoke ". build/envsetup.sh" from your shell to add the following functions to y
 - sepgrep:   Greps on all local sepolicy files.
 - sgrep:     Greps on all local source files.
 - godir:     Go to the directory containing a file.
+- repopick:  Utility to fetch changes from Gerrit.
 
 Environment options:
 - SANITIZE_HOST: Set to 'true' to use ASAN for all host modules. Note that
@@ -1708,6 +1709,12 @@ function provision()
         fi
     fi
     "$ANDROID_PRODUCT_OUT/provision-device" "$@"
+}
+
+function repopick() {
+    set_stuff_for_environment
+    T=$(gettop)
+    $T/vendor/aquarios/tools/repopick.py $@
 }
 
 function atest()
