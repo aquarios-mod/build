@@ -317,13 +317,13 @@ function addcompletions()
         return
     fi
 
-    dir="sdk/bash_completion"
-    if [ -d ${dir} ]; then
-        for f in `/bin/ls ${dir}/[a-z]*.bash 2> /dev/null`; do
-            echo "including $f"
-            . $f
-        done
-    fi
+#   dir="sdk/bash_completion"
+#   if [ -d ${dir} ]; then
+#       for f in `/bin/ls ${dir}/[a-z]*.bash 2> /dev/null`; do
+#           echo "including $f"
+#           . $f
+#       done
+#   fi
 
     complete -C "bit --tab" bit
 }
@@ -2015,7 +2015,7 @@ do
 done
 unset f
 
-addcompletions
+#addcompletions
 
 export ANDROID_BUILD_TOP=$(gettop)
 
