@@ -1630,7 +1630,7 @@ function reposync() {
 
 function repopick() {
     T=$(gettop)
-    $T/vendor/aquarios/build/tools/repopick.py $@
+    $T/vendor/aquarios/tools/repopick.py $@
 }
 
 function fixup_common_out_dir() {
